@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html , body{
+    height: 100%;
+    width: 100%;
+}
+
+:root{
+    --snake-color: #ff00a6;
+    --food-color: #ff0000;
+    --bg-color: #232222;
+    --border-color: #525151;
+    --font-color: #cfcece;
+    --space--variables: 40px;
+}
+
+html{
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main,
+section{
+    width: 100%;
+    height: 100%;
+}
+
+section{
+    padding: var(--space--variables);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 10px;
+}
+
+section .infos{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    background-color: #1b1a1a;
+}
+
+.info{
+    padding: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.board{
+    border: 2px solid var(--border-color);
+    display: grid;
+    flex-grow: 1;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+}
+
+.block{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #807d7d;
+}
+
+.fill{
+    background-color: var(--snake-color);
+}
+
+.food{
+    background-color: rgb(255, 213, 0);
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(86, 81, 81, 0.21);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .start-game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn{
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(255, 0, 43);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover{
+    background-color: rgb(200, 0, 63);
+    transform: scale(1.05);
+}
+
+.modal .game-over{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
